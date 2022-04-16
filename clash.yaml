@@ -29,7 +29,7 @@ dns:
       - 240.0.0.0/4
 
 proxies:
-  
+
 proxy-groups:
   - name: 🚀 节点选择
     type: select
