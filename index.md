@@ -1,7 +1,10 @@
 ## 搭建tcp+xtls
 
 4串代码搭完xray的tcp+xtls
-
+#### 另配置了一键代码，有需自取
+```markdown
+wget -N --no-check-certificate -q -O xtls.sh "https://raw.githubusercontent.com/huahsui/huashui/gh-pages/install-xtls.sh" && chmod +x xtls.sh && bash xtls.sh
+```
 ### 特别提醒，第1串要根据自己的系统选择自己的代码框！！！
 root! root! root!
 
