@@ -29,7 +29,7 @@ dns:
       - 240.0.0.0/4
 
 proxies:
-  - {name: tcp+xtls, server: cs.ml, port: 443, type: vless, uuid: 3279, flow: xtls-rprx-direct, skip-cert-verify: false,servername: cs.ml}
+  
 proxy-groups:
   - name: 🚀 节点选择
     type: select
