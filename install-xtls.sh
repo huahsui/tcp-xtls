@@ -99,7 +99,7 @@ echo "已写入完成，正在启动与设置证书自更"
 sleep 2
 systemctl daemon-reload && systemctl restart xray && systemctl enable xray && systemctl restart nginx && systemctl enable nginx && touch cronfile && echo '15 2 * */2 * root certbot renew --pre-hook "systemctl stop nginx" --post-hook "systemctl start nginx"' > ./cronfile && crontab -u root ./cronfile
 sleep 1
-wget -N --no-check-certificate -q -O /html/we.dog/$UUID.yaml https://raw.githubusercontent.com/huahsui/huashui/gh-pages/clash.yaml && sed -i '32 i\  - {name: tcp+xtls, server: $DOMIN, port: 443, type: vless, uuid: '$UUID', flow: xtls-rprx-direct, skip-cert-verify: false,servername: '$DOMIN'}' /html/we.dog/$UUID.yaml
+wget -N --no-check-certificate -q -O /html/we.dog/$UUID.yaml https://raw.githubusercontent.com/huahsui/huashui/gh-pages/clash.yaml && sed -i '32 i\  - {name: tcp+xtls, server: '$DOMIN', port: 443, type: vless, uuid: '$UUID', flow: xtls-rprx-direct, skip-cert-verify: false,servername: '$DOMIN'}' /html/we.dog/$UUID.yaml
 
 echo
 echo "   恭喜，你的tcp+xtls已配置成功，以下为你的clash配置"
