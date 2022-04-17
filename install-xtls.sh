@@ -116,6 +116,7 @@ echo "你的bbr已启用"
 else 
 echo -e "${red}未支持该系统版本，bbr启动失败，请自行启动！！！${plain}\n" && exit 1
 fi
+sleep 2
 
 echo
 echo "   恭喜，你的tcp+xtls已配置成功，以下为你的clash配置"
