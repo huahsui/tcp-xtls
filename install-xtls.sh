@@ -105,6 +105,17 @@ sleep 2
 systemctl daemon-reload && systemctl restart xray && systemctl enable xray && systemctl restart nginx && systemctl enable nginx && touch cronfile && echo '15 2 * */2 * root certbot renew --pre-hook "systemctl stop nginx" --post-hook "systemctl start nginx"' > ./cronfile && crontab -u root ./cronfile
 sleep 1
 wget -N --no-check-certificate -q -O /html/we.dog/$UUID.yaml "https://raw.githubusercontent.com/huahsui/tcp-xtls/gh-pages/clash.yaml" && sed -i '32 i\  - {name: tcp+xtls, server: '$DOMIN', port: 443, type: vless, uuid: '$UUID', flow: xtls-rprx-direct, skip-cert-verify: false,servername: '$DOMIN'}' /html/we.dog/$UUID.yaml
+sleep 1
+
+# 开启bbr
+if [ "$ID" == "debian" ] || [ "$ID" == "ubuntu" ];then
+echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
+echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
+sysctl -p
+echo "你的bbr已启用"
+else 
+echo -e "${red}未支持该系统版本，bbr启动失败，请自行启动！！！${plain}\n" && exit 1
+fi
 
 echo
 echo "   恭喜，你的tcp+xtls已配置成功，以下为你的clash配置"
@@ -114,7 +125,7 @@ echo "- {name: tcp+xtls, server: $DOMIN, port: 443, type: vless, uuid: $UUID, fl
 echo
 echo "   clash配置文件在 https://$DOMIN/$UUID.yaml ,请直接在clash客户端中输入该网址食用,clash使用请用meta内核，自行谷歌"
 echo
-echo "   其他客户端请自行参考clash配置中的数据,另食用前请自行开启bbr,懒得动了！"
+echo "   其他客户端请自行参考clash配置中的数据！"
 echo "----------------------------------------------------------------------------------------------------------------------------------------------"
 echo
 # END
