@@ -114,7 +114,7 @@ echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
 sysctl -p
 echo "你的bbr已启用"
 else 
-echo -e "${red}未支持该系统版本，bbr启动失败，请自行启动！！！${plain}\n" && exit 1
+echo -e "${red}未支持该系统版本，bbr启动失败，请自行启动！！！${plain}\n"
 fi
 sleep 2
 
