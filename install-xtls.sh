@@ -109,7 +109,7 @@ sleep 1
 clear
 
 # 开启bbr
-if [ "$ID" == "debian" -a "$VERSION_ID" -ge "9" ] || [ "$ID" == "ubuntu" -a "$VERSION_ID" -ge "18" ];then
+if [ "$ID" == "debian" ] || [ "$ID" == "ubuntu" ];then
 sed -i '/net\.core\.default_qdisc=fq/d' /etc/sysctl.conf
 sed -i '/net\.ipv4\.tcp_congestion_control=bbr/d' /etc/sysctl.conf
 echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
