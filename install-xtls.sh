@@ -106,9 +106,8 @@ systemctl daemon-reload && systemctl restart xray && systemctl enable xray && sy
 sleep 1
 wget -N --no-check-certificate -q -O /html/we.dog/$UUID.yaml "https://raw.githubusercontent.com/huahsui/tcp-xtls/gh-pages/clash.yaml" && sed -i '32 i\  - {name: tcp+xtls, server: '$DOMIN', port: 443, type: vless, uuid: '$UUID', flow: xtls-rprx-direct, skip-cert-verify: false,servername: '$DOMIN'}' /html/we.dog/$UUID.yaml
 sleep 1
-
 clear
-echo
+
 # 开启bbr
 if [ "$ID" == "debian" ] || [ "$ID" == "ubuntu" ];then
 echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
