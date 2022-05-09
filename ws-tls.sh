@@ -127,10 +127,10 @@ fi
 sleep 2
 
 echo
-echo "   恭喜，你的tcp+xtls已配置成功，以下为你的clash配置"
+echo "   恭喜，你的ws+tls已配置成功，以下为你的clash配置"
 echo
 echo "----------------------------------------------------------------------------------------------------------------------------------------------"
-echo "- {name: tcp+ws, server: $DOMIN, port: 443, type: vless, uuid: $UUID, udp: true, tls: true, network: ws, skip-cert-verify: false, servername: $DOMIN, ws-opts: {path: /ray, headers: {Host: $DOMIN}}}"
+echo "- {name: ws+tls, server: $DOMIN, port: 443, type: vless, uuid: $UUID, udp: true, tls: true, network: ws, skip-cert-verify: false, servername: $DOMIN, ws-opts: {path: /ray, headers: {Host: $DOMIN}}}"
 echo
 echo "   clash配置文件在 https://$DOMIN/$UUID.yaml ,请直接在clash客户端中输入该网址食用,clash使用请用meta内核，自行谷歌"
 echo
