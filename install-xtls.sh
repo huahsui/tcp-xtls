@@ -89,6 +89,39 @@ cat > /usr/local/etc/xray/config.json <<EOF
                     ]
                 }
             }
+        },
+        {
+            "port": 8443,
+            "protocol": "vless",
+            "settings": {
+                "clients": [
+                    {
+                        "id": "$UUID",
+                        "level": 0
+                    }
+                ],
+                "decryption": "none"
+            },
+            "streamSettings": {
+                "network": "quic",
+                "quicSettings": {
+                    "security": "none",
+                    "key": "",
+                    "header": {
+                        "type": "none"
+                    }
+                },
+                "security": "tls",
+                "tlsSettings": {
+                    "certificates": [
+                        {
+                            "certificateFile": "/etc/letsencrypt/live/$DOMIN/fullchain.pem",
+                            "keyFile": "/etc/letsencrypt/live/$DOMIN/privkey.pem"
+                        }
+                    ],
+                    "rejectUnknownSni": true
+                }
+            }
         }
     ],
     "outbounds": [
