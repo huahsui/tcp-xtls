@@ -136,10 +136,9 @@ echo
 echo "----------------------------------------------------------------------------------------------------------------------------------------------"
 echo
 echo "- {name: ws+tls, server: $DOMIN, port: 443, type: vless, uuid: $UUID, udp: true, tls: true, network: ws, skip-cert-verify: false, servername: $DOMIN, ws-opts: {path: /ray, headers: {Host: $DOMIN}}}"
-echo
 echo "   clash配置文件在 https://$DOMIN/$UUID.yaml ,请直接在clash客户端中输入该网址食用,clash使用请用meta内核，自行谷歌"
 echo
-echo "vless://$UUID@$DOMIN:443?encryption=none&security=tls&sni=$DOMIN&type=ws&host=$DOMIN&path=%2Fray#dog"
+echo "   vless://$UUID@$DOMIN:443?encryption=none&security=tls&sni=$DOMIN&type=ws&host=$DOMIN&path=%2Fray#dog"
 echo "   直接导入v2rayN使用"
 echo
 echo "   其他客户端请自行参考clash配置中的数据！"
