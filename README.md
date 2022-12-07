@@ -4,6 +4,10 @@
 ```markdown
 wget -N --no-check-certificate -q -O xtls.sh "https://raw.githubusercontent.com/huahsui/tcp-xtls/gh-pages/install-xtls.sh" && chmod +x xtls.sh && bash xtls.sh
 ```
+#### 发现还是nginx+ws最稳，推荐使用以下一键
+```markdown
+wget -N --no-check-certificate -q -O ws.sh "https://raw.githubusercontent.com/huahsui/tcp-xtls/gh-pages/ws-tls.sh" && chmod +x ws.sh && bash ws.sh
+```
 ### 特别提醒，第1串要根据自己的系统选择自己的代码框！！！
 
 
