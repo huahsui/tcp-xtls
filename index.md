@@ -5,6 +5,10 @@
 ```markdown
 wget -N --no-check-certificate -q -O xtls.sh "https://raw.githubusercontent.com/huahsui/tcp-xtls/gh-pages/install-xtls.sh" && chmod +x xtls.sh && bash xtls.sh
 ```
+#### 发现还是nginx+ws最稳，推荐使用以下一键
+```markdown
+wget -N --no-check-certificate -q -O ws.sh "https://raw.githubusercontent.com/huahsui/tcp-xtls/gh-pages/ws-tls.sh" && chmod +x ws.sh && bash ws.sh
+```
 ### 特别提醒，第1串要根据自己的系统选择自己的代码框！！！
 root! root! root!
 
@@ -88,9 +92,9 @@ systemctl daemon-reload && systemctl restart xray && systemctl enable xray && sy
 ```
 
 ### 结语
-划到这里，你就已经搭完了，看你的域名应该已经出现很有意思的网页了，潜水去了🏊‍
+划到这里，你就已经搭完了，看你的域名应该已经出现网页了，潜水去了🏊‍
 
-配置? -o-  贴个clash的配置吧，下面代码丢进去就真的结束了
+配置? -o-  贴个clash的配置吧，下面代码丢进去就结束
 ```markdown
 echo " - {name: tcp+xtls, server: $DOMIN, port: 443, type: vless, uuid: $UUID, flow: xtls-rprx-direct, skip-cert-verify: false,servername: $DOMIN}"
 ```
