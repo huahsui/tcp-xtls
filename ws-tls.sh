@@ -47,6 +47,28 @@ apt update
 apt install wget git nginx certbot curl -y && rm -rf /html/* && mkdir -p /html && cd /html && git clone https://github.com/xiongbao/we.dog.git && rm -rf /etc/nginx/sites-enabled/default
 bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install && sed -i 's/nobody/root/g' /etc/systemd/system/xray.service
 systemctl stop nginx && yes | certbot certonly --standalone -d $DOMIN --agree-tos --email ppcert@gmail.com
+myFile="/etc/letsencrypt/live/$DOMIN/fullchain.pem"
+if [ ! -f "$myFile" ]; then
+echo "你的证书申请失败，如果域名刚解析到本机，请等几分钟后继续申请，若为控制面板80、443端口未开，请开启后继续！！！"
+PS3='请在以上操作完成后继续，或直接退出本脚本: '
+foods=("继续" "退出")
+select fav in "${foods[@]}"; do
+    case $fav in
+        "继续")
+            yes | certbot certonly --standalone -d $DOMIN --agree-tos --email ppcert@gmail.com
+            if [ ! -f "$myFile" ]; then
+            echo "你的证书申请失败，请完成以上操作后重新运行本脚本！！！" && exit 1
+            fi
+	    # optionally call a function or run some code here
+	    break
+            ;;
+	    "退出")
+	        echo "退出中，感谢使用本脚本"
+	    exit 2
+	    ;;
+        *) echo "invalid option $REPLY";;
+    esac
+done
 fi
 
 echo
