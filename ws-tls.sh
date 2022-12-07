@@ -40,6 +40,16 @@ yum -y install epel-release && yum install wget git nginx certbot curl -y && rm 
 bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install && sed -i 's/nobody/root/g' /etc/systemd/system/xray.service
 chattr -i  /etc/selinux/config && sed -i 's/enforcing/disabled/g' /etc/selinux/config && chattr +i  /etc/selinux/config
 systemctl stop nginx && yes | certbot certonly --standalone -d $DOMIN --agree-tos --email ppcert@gmail.com
+myFile="/etc/letsencrypt/live/$DOMIN/fullchain.pem"
+if [ ! -f "$myFile" ]; then
+echo "----------------------------------------------------------------------------------------------------------------------------------------------"
+echo
+echo "你的证书申请失败，如果域名刚解析到本机，请等几分钟后继续申请，若为控制面板80、443端口未开，请开启后继续！！！"
+echo
+echo "----------------------------------------------------------------------------------------------------------------------------------------------"
+sleep 2
+exit 1
+fi
 else
 iptables -F && iptables -P INPUT ACCEPT && iptables -P OUTPUT ACCEPT && iptables -P FORWARD ACCEPT && iptables-save
 systemctl stop ufw && systemctl disable ufw
@@ -49,7 +59,13 @@ bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release
 systemctl stop nginx && yes | certbot certonly --standalone -d $DOMIN --agree-tos --email ppcert@gmail.com
 myFile="/etc/letsencrypt/live/$DOMIN/fullchain.pem"
 if [ ! -f "$myFile" ]; then
-echo "你的证书申请失败，如果域名刚解析到本机，请等几分钟后继续申请，若为控制面板80、443端口未开，请开启后继续！！！" && exit 2
+echo "----------------------------------------------------------------------------------------------------------------------------------------------"
+echo
+echo "你的证书申请失败，如果域名刚解析到本机，请等几分钟后继续申请，若为控制面板80、443端口未开，请开启后继续！！！"
+echo
+echo "----------------------------------------------------------------------------------------------------------------------------------------------"
+sleep 2
+exit 1
 fi
 fi
 
