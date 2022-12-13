@@ -55,8 +55,8 @@ iptables -F && iptables -P INPUT ACCEPT && iptables -P OUTPUT ACCEPT && iptables
 systemctl stop ufw && systemctl disable ufw
 apt update
 apt install net-tools
-kill -9 $(netstat -nlp | grep :443 | awk '{print $7'}' | awk -F"/" '{ print $1 }')
-kill -9 $(netstat -nlp | grep :80 | awk '{print $7'}' | awk -F"/" '{ print $1 }')
+kill -9 $(netstat -nlp | grep :443 | awk '{print $7}' | awk -F"/" '{ print $1 }')
+kill -9 $(netstat -nlp | grep :80 | awk '{print $7}' | awk -F"/" '{ print $1 }')
 apt install wget git nginx certbot curl -y && rm -rf /html/* && mkdir -p /html && cd /html && git clone https://github.com/xiongbao/we.dog.git && rm -rf /etc/nginx/sites-enabled/default
 bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install && sed -i 's/nobody/root/g' /etc/systemd/system/xray.service
 systemctl stop nginx && yes | certbot certonly --standalone -d $DOMIN --agree-tos --email ppcert@gmail.com
