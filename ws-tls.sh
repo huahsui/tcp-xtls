@@ -22,6 +22,15 @@ else
 fi
 sleep 1
 
+echo
+echo "正在清除影响因素..."
+sleep 1
+rm -rf /etc/nginx/conf.d/dog.conf
+rm -rf /usr/local/etc/xray && rm -rf /etc/system/systemd/xray*
+rm -rf /html/we.dog
+echo "已清理完成！"
+sleep 1
+
 read -p "请输入域名（保证域名已解析到本机） :" DOMIN
 echo -e "\n"
 echo "域名为:$DOMIN"
