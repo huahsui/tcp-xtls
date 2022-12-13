@@ -52,7 +52,7 @@ kill -9 $(netstat -nlp | grep :24600 | awk '{print $7}' | awk -F"/" '{ print $1 
 yum -y install epel-release && yum install wget git nginx certbot curl -y && rm -rf /html/* && mkdir -p /html && cd /html && git clone https://github.com/xiongbao/we.dog.git && rm -rf /etc/nginx/sites-enabled/default
 bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install && sed -i 's/nobody/root/g' /etc/systemd/system/xray.service
 chattr -i  /etc/selinux/config && sed -i 's/enforcing/disabled/g' /etc/selinux/config && chattr +i  /etc/selinux/config
-systemctl stop nginx && yes | certbot certonly --standalone -d $DOMIN --agree-tos --email ppcert@gmail.com
+systemctl stop nginx && echo 1 | certbot certonly --standalone -d $DOMIN --agree-tos --email ppcert@gmail.com
 myFile="/etc/letsencrypt/live/$DOMIN/fullchain.pem"
 if [ ! -f "$myFile" ]; then
 echo "----------------------------------------------------------------------------------------------------------------------------------------------"
@@ -73,7 +73,7 @@ kill -9 $(netstat -nlp | grep :80 | awk '{print $7}' | awk -F"/" '{ print $1 }')
 kill -9 $(netstat -nlp | grep :24600 | awk '{print $7}' | awk -F"/" '{ print $1 }')
 apt install wget git nginx certbot curl -y && rm -rf /html/* && mkdir -p /html && cd /html && git clone https://github.com/xiongbao/we.dog.git && rm -rf /etc/nginx/sites-enabled/default
 bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install && sed -i 's/nobody/root/g' /etc/systemd/system/xray.service
-systemctl stop nginx && yes | certbot certonly --standalone -d $DOMIN --agree-tos --email ppcert@gmail.com
+systemctl stop nginx && echo 1 | certbot certonly --standalone -d $DOMIN --agree-tos --email ppcert@gmail.com
 myFile="/etc/letsencrypt/live/$DOMIN/fullchain.pem"
 if [ ! -f "$myFile" ]; then
 echo "----------------------------------------------------------------------------------------------------------------------------------------------"
