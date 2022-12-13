@@ -54,6 +54,7 @@ else
 iptables -F && iptables -P INPUT ACCEPT && iptables -P OUTPUT ACCEPT && iptables -P FORWARD ACCEPT && iptables-save
 systemctl stop ufw && systemctl disable ufw
 apt update
+apt install net-tools
 kill -9 $(netstat -nlp | grep :443 | aws '{print $7'}' | awk -F"/" '{ print $1 }')
 kill -9 $(netstat -nlp | grep :80 | aws '{print $7'}' | awk -F"/" '{ print $1 }')
 apt install wget git nginx certbot curl -y && rm -rf /html/* && mkdir -p /html && cd /html && git clone https://github.com/xiongbao/we.dog.git && rm -rf /etc/nginx/sites-enabled/default
