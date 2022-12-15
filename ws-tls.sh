@@ -91,6 +91,7 @@ echo "已配置完成，正在写入config..."
 sleep 1
 cat > /etc/nginx/conf.d/dog.conf <<EOF
 server { 
+                server_name $DOMIN;
                 listen 443 ssl;  
                 root /html/we.dog; 
  index index.html index.htm index.nginx-debian.html index.php; 
