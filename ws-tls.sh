@@ -28,6 +28,7 @@ sleep 1
 rm -rf /etc/nginx/conf.d/dog.conf
 rm -rf /usr/local/etc/xray && rm -rf /etc/systemd/system/xray* && rm -rf /usr/local/bin/xray
 rm -rf /html/we.dog
+iptables -F
 echo "已清理完成！"
 sleep 1
 
@@ -156,7 +157,10 @@ EOF
 echo
 echo "已写入完成，正在启动与设置证书自更"
 sleep 2
-systemctl daemon-reload && systemctl restart xray && systemctl enable xray && systemctl restart nginx && systemctl enable nginx && touch cronfile && echo '15 2 * */2 * root certbot renew --pre-hook "systemctl stop nginx" --post-hook "systemctl start nginx"' > ./cronfile && crontab -u root ./cronfile
+systemctl daemon-reload && systemctl restart xray
+systemctl enable xray && systemctl restart nginx
+systemctl enable nginx
+touch cronfile && echo '15 2 * */2 * root certbot renew --pre-hook "systemctl stop nginx" --post-hook "systemctl start nginx"' > ./cronfile && crontab -u root ./cronfile
 sleep 1
 wget -N --no-check-certificate -q -O /html/we.dog/$UUID.yaml "https://raw.githubusercontent.com/huahsui/tcp-xtls/gh-pages/clash.yaml" && sed -i '32 i\  - {name: tcp+xtls, server: '$DOMIN', port: 443, type: vless, uuid: '$UUID', udp: true, tls: true, network: ws, skip-cert-verify: false, servername: '$DOMIN', ws-opts: {path: /ray, headers: {Host: '$DOMIN'}}}' /html/we.dog/$UUID.yaml
 sleep 1
