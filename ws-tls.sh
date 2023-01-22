@@ -28,7 +28,6 @@ sleep 1
 rm -rf /etc/nginx/conf.d/dog.conf
 rm -rf /usr/local/etc/xray && rm -rf /etc/systemd/system/xray* && rm -rf /usr/local/bin/xray
 rm -rf /html/we.dog
-iptables -F
 echo "已清理完成！"
 sleep 1
 
