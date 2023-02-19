@@ -160,7 +160,7 @@ cat > /usr/local/etc/xray/config.json <<EOF
 EOF
 
 echo
-echo "已写入完成，正在启动与设置证书自更"
+echo "已写入完成"
 sleep 2
 systemctl daemon-reload && systemctl restart xray && systemctl enable xray
 sleep 1
