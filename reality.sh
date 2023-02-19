@@ -81,15 +81,6 @@ echo -e "\n"
 echo "publickey is $Two"
 fi
 sleep 1
-# 安装php
-if [ "$ID" == "centos" ] ; then
-echo "centos安装php建议编译！3s考虑清楚退出"
-sleep 4
-yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y
-yum -y install yum-utils && yum-config-manager --disable "remi-php*" && yum-config-manager --enable remi-php74 && yum install php-fpm php-mysql php-common php-curl php-cli php-mbstring php-xml -y && systemctl restart php-fpm && systemctl enable php-fpm
-else
-apt install php-fpm php-mysql php-common php-curl php-cli php-mbstring php-xml -y &&  sed -i '80i listen = 127.0.0.1:9000' /etc/php/*/fpm/pool.d/www.conf && systemctl restart php*
-fi
 
 echo
 echo "已配置完成，正在写入config..."
