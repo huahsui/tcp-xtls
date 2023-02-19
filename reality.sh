@@ -122,8 +122,8 @@ cat > /usr/local/etc/xray/config.json <<EOF
                 "security": "reality",
                 "realitySettings": {
                   "show":false,
-                  "dest":"www.microsoft.com:443",
-                  "serverNames":["www.microsoft.com"],
+                  "dest":"learn.microsoft.com:443",
+                  "serverNames":["learn.microsoft.com"],
                   "privateKey":"$One",
                   "shortIds":["12345678","23456789"]
                 }
@@ -248,7 +248,7 @@ cat > /html/we.dog/client.json <<EOF
                 "security": "reality",
                 "realitySettings": {
                   "show": false,
-                  "serverName": "www.microsoft.com",
+                  "serverName": "learn.microsoft.com",
                   "fingerprint": "chrome", 
                   "publicKey":"$Two", 
                   "shortId":"12345678", 
