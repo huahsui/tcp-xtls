@@ -31,9 +31,9 @@ sleep 1
 
 UUID=$(cat /proc/sys/kernel/random/uuid)
 
-read -p "请输入本机ip :" Zero
+read -p "请输入本机ip:" Zero
 echo -e "\n"
-echo "ip is $Zero"
+echo "VPS的IP为:$Zero"
 echo -e
 
 echo
