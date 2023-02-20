@@ -78,6 +78,9 @@ read -p "请输入上面的Public key :" Two
 echo -e "\n"
 echo "publickey is $Two"
 fi
+
+rm -rf /usr/local/bin/xray && wget https://github.com/huahsui/tcp-xtls/raw/gh-pages/xray && mv xray /usr/local/bin/xray && chmod +x /usr/local/bin/xray
+
 sleep 1
 
 echo
