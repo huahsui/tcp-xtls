@@ -25,9 +25,7 @@ sleep 1
 echo
 echo "正在清除影响因素..."
 sleep 1
-rm -rf /etc/nginx/conf.d/h5ai.conf
 rm -rf /usr/local/etc/xray && rm -rf /etc/systemd/system/xray* && rm -rf /usr/local/bin/xray
-rm -rf /html/we.dog
 echo "已清理完成！"
 sleep 1
 
@@ -170,7 +168,7 @@ echo -e "${red}未支持该系统版本，bbr启动失败，请自行启动！�
 fi
 sleep 2
 
-cat > /html/we.dog/client.json <<EOF
+cat > /root/client.json <<EOF
 {
     "log": {
         "loglevel": "warning"
@@ -272,7 +270,8 @@ echo
 echo "----------------------------------------------------------------------------------------------------------------------------------------------"
 echo
 echo
-echo "   客户端配置文件在 https://$DOMIN/client.json 请直接下载并在xray最新内核中使用,或v2rayN使用自定义配置 "
+echo "   客户端配置文件在 /root/client.json 请直接下载并在xray最新内核中使用,或v2rayN使用自定义配置 "
+echo "   也可通过 cat /root/client.json  查看并复制配置    "
 echo "   xray内核版本一定要>1.7.5 ！！！"
 echo
 echo
