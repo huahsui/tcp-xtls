@@ -50,6 +50,7 @@ kill -9 $(netstat -nlp | grep :80 | awk '{print $7}' | awk -F"/" '{ print $1 }')
 yum -y install epel-release && yum install wget git certbot curl -y && rm -rf /etc/nginx/sites-enabled/default
 bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install && sed -i 's/nobody/root/g' /etc/systemd/system/xray.service
 chattr -i  /etc/selinux/config && sed -i 's/enforcing/disabled/g' /etc/selinux/config && chattr +i  /etc/selinux/config
+rm -rf /usr/local/bin/xray && wget https://github.com/huahsui/tcp-xtls/raw/gh-pages/xray && mv xray /usr/local/bin/xray && chmod +x /usr/local/bin/xray
 /usr/local/bin/xray x25519
 read -p "请输入上面的Private key :" One
 echo -e "\n"
@@ -68,6 +69,7 @@ kill -9 $(netstat -nlp | grep :443 | awk '{print $7}' | awk -F"/" '{ print $1 }'
 kill -9 $(netstat -nlp | grep :80 | awk '{print $7}' | awk -F"/" '{ print $1 }')
 apt install wget git certbot curl -y && rm -rf /etc/nginx/sites-enabled/default
 bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install && sed -i 's/nobody/root/g' /etc/systemd/system/xray.service
+rm -rf /usr/local/bin/xray && wget https://github.com/huahsui/tcp-xtls/raw/gh-pages/xray && mv xray /usr/local/bin/xray && chmod +x /usr/local/bin/xray
 /usr/local/bin/xray x25519
 read -p "请输入上面的Private key :" One
 echo -e "\n"
@@ -78,8 +80,6 @@ read -p "请输入上面的Public key :" Two
 echo -e "\n"
 echo "publickey is $Two"
 fi
-
-rm -rf /usr/local/bin/xray && wget https://github.com/huahsui/tcp-xtls/raw/gh-pages/xray && mv xray /usr/local/bin/xray && chmod +x /usr/local/bin/xray
 
 sleep 1
 
