@@ -272,7 +272,7 @@ echo
 echo
 echo "   客户端配置文件在 /root/client.json 请直接下载并在xray最新内核中使用,或v2rayN使用自定义配置 "
 echo "   也可通过 cat /root/client.json  查看并复制配置    "
-echo "   xray内核版本一定要>1.7.5 ！！！"
+echo "   最新内核地址为：https://github.com/huahsui/tcp-xtls/raw/gh-pages/Xray-windows-64.zip 自行下载"
 echo
 echo
 echo "----------------------------------------------------------------------------------------------------------------------------------------------"
