@@ -11,7 +11,7 @@ wget -N --no-check-certificate -q -O xtls.sh "https://raw.githubusercontent.com/
 ```markdown
 wget -N --no-check-certificate -q -O reality.sh "https://raw.githubusercontent.com/huahsui/tcp-xtls/gh-pages/reality.sh" && chmod +x reality.sh && bash reality.sh
 ```
-#### nginx+reality (套自己域名)
+#### nginx+reality (自己偷自己)
 ```markdown
 wget -N --no-check-certificate -q -O reality.sh "https://raw.githubusercontent.com/huahsui/sni-h5ai-xtls/main/reality.sh" && chmod +x reality.sh && bash reality.sh
 ```
