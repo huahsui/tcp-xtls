@@ -11,6 +11,10 @@ wget -N --no-check-certificate -q -O xtls.sh "https://raw.githubusercontent.com/
 ```markdown
 wget -N --no-check-certificate -q -O reality.sh "https://raw.githubusercontent.com/huahsui/tcp-xtls/gh-pages/reality.sh" && chmod +x reality.sh && bash reality.sh
 ```
+#### nginx+reality (套自己域名)
+```markdown
+wget -N --no-check-certificate -q -O reality.sh "https://raw.githubusercontent.com/huahsui/sni-h5ai-xtls/main/reality.sh" && chmod +x reality.sh && bash reality.sh
+```
 ### v2rayN使用新版内核和自定义配置
 https://github.com/2dust/v2rayN/releases/download/5.39/v2rayN.zip
 
