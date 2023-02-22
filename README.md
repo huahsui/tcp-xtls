@@ -1,4 +1,4 @@
-## 自配一键脚本集合
+## 自用一键脚本集合
 #### nginx+h5ai+tls
 ```markdown
 wget -N --no-check-certificate -q -O ws.sh "https://raw.githubusercontent.com/huahsui/tcp-xtls/gh-pages/ws-tls.sh" && chmod +x ws.sh && bash ws.sh
