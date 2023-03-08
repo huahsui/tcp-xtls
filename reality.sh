@@ -382,7 +382,7 @@ echo "--------------------------------------------------------------------------
 echo
 echo "   客户端配置文件在 /root/client.json 请直接下载，也可通过 cat /root/client.json  复制配置 "
 echo
-echo "   电脑端使用见以下说明可使用v2rayN,见以下说明                                   "
+echo "   电脑端可使用v2rayN,见以下说明                                   "
 echo -e "\033[31m\033[1m                                            v2rayN使用新版内核和自定义配置                                             \033[0m"
 echo "   https://github.com/2dust/v2rayN/releases/download/5.39/v2rayN.zip"
 echo "   https://github.com/huahsui/tcp-xtls/blob/gh-pages/Xray-windows-64.zip"
