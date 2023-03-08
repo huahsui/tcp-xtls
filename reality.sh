@@ -396,5 +396,9 @@ echo "   关于sfi的安装可看这里：https://sing-box.sagernet.org/zh/insta
 echo
 echo "----------------------------------------------------------------------------------------------------------------------------------------------"
 echo
+echo -e "\033[35m   以下为clash meta配置，可在openwrt等客户端使用"
+echo "- {name: Reality, server: $Zero, port: 443, type: vless, uuid: $UUID, network: tcp, tls: true, flow: xtls-rprx-vision, client-fingerprint: chrome, reality-opts: {server-name: learn.microsoft.com, public-key: $Two, short-id: 12a34b56c78d1a2b}}
+echo
+echo "----------------------------------------------------------------------------------------------------------------------------------------------"
 
 # END
