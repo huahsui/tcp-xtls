@@ -18,7 +18,7 @@ wget -N --no-check-certificate -q -O reality.sh "https://raw.githubusercontent.c
 ### v2rayN使用新版内核和自定义配置
 https://github.com/2dust/v2rayN/releases/download/5.39/v2rayN.zip
 
-https://github.com/huahsui/tcp-xtls/blob/gh-pages/Xray-windows-64.zip
+https://github.com/XTLS/Xray-core/releases/tag/v1.8.0
 
 1、先下载以上内核和v2rayN,然后解压v2rayN,并把Xray-windows-64压缩包里的文件复制进v2rayN文件夹。
 
