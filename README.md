@@ -24,4 +24,8 @@ https://github.com/XTLS/Xray-core/releases/tag/v1.8.0
 
 2、打开v2rayN.exe,左上角依次选择  服务器 ——> 添加自定义配置服务器 ——> 浏览（打开客户端配置)  ——>  core类型（选xray） ——> 确定
 
+### 注：自己域名申请的证书三个月过期，可能会有续签不成功而导致无法翻墙可输入以下命令手动更新证书
+```markdown
+systemctl stop nginx && certbot renew && systemctl start nginx && systemctl enable nginx
 
+```
