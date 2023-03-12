@@ -371,6 +371,7 @@ cat > /root/singbox.json <<EOF
   }
 }
 EOF
+wget -N --no-check-certificate -q -O /root/meta.yaml "https://raw.githubusercontent.com/huahsui/sni-h5ai-xtls/main/clash.yaml" && sed -i '32 i\  - {name: tcp+xtls, server: $Zero, port: 443, type: vless, uuid: $UUID, network: tcp, tls: true, udp: true, flow: xtls-rprx-vision, servername: learn.microsoft.com, reality-opts: {public-key: $Two, short-id: 12345678}, client-fingerprint: chrome}' /root/meta.yaml
 
 echo "----------------------------------------------------------------------------------------------------------------------------------------------"
 echo
@@ -394,7 +395,7 @@ echo "   关于sfi的安装可看这里：https://sing-box.sagernet.org/zh/insta
 echo
 echo "----------------------------------------------------------------------------------------------------------------------------------------------"
 echo
-echo -e "\033[35m   以下为clash meta配置，可在openwrt等客户端使用"
+echo -e "\033[35m   以下为clash meta配置，可在openwrt等客户端使用(也可直接使用/root/meta.yaml的配置)"
 echo "- {name: Reality, server: $Zero, port: 443, type: vless, uuid: $UUID, network: tcp, tls: true, udp: true, flow: xtls-rprx-vision, servername: learn.microsoft.com, reality-opts: {public-key: $Two, short-id: 12345678}, client-fingerprint: chrome}  "
 echo
 echo "----------------------------------------------------------------------------------------------------------------------------------------------"
