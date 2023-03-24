@@ -381,7 +381,7 @@ echo "--------------------------------------------------------------------------
 echo
 echo "   客户端配置文件在 /root/client.json 请直接下载，也可通过 cat /root/client.json  复制配置 "
 echo
-echo "   分享链接：vless://$UUID@$Zero:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=learn.microsoft.com&fp=chrome&pbk=$Two&sid=12345678&spx=%2F&type=tcp&headerType=none#reality
+echo "   分享链接：vless://$UUID@$Zero:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=learn.microsoft.com&fp=chrome&pbk=$Two&sid=12345678&spx=%2F&type=tcp&headerType=none#reality"
 echo
 echo "   电脑端可使用v2rayN,安卓端可使用v2rayNG，以下为下载链接（请使用最新客户端）                                   "
 echo "   https://github.com/2dust/v2rayN/releases"
