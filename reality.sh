@@ -381,12 +381,11 @@ echo "--------------------------------------------------------------------------
 echo
 echo "   客户端配置文件在 /root/client.json 请直接下载，也可通过 cat /root/client.json  复制配置 "
 echo
-echo "   电脑端可使用v2rayN,见以下说明                                   "
-echo -e "\033[31m\033[1m                                            v2rayN使用新版内核和自定义配置                                             \033[0m"
-echo "   https://github.com/2dust/v2rayN/releases/download/5.39/v2rayN.zip"
-echo "   https://github.com/XTLS/Xray-core/releases/tag/v1.8.0"
-echo "   1、先下载以上内核和v2rayN,然后解压v2rayN,并把Xray-windows-64压缩包里的文件复制进v2rayN文件夹。"
-echo "   2、打开v2rayN.exe,左上角依次选择 服务器 ——> 添加自定义配置服务器 ——> 浏览（打开客户端配置文件) ——> core类型（选xray） ——> 确定"
+echo "   分享链接：vless://$UUID@$Zero:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=learn.microsoft.com&fp=chrome&pbk=$Two&sid=12345678&spx=%2F&type=tcp&headerType=none#reality
+echo
+echo "   电脑端可使用v2rayN,安卓端可使用v2rayNG，以下为下载链接（请使用最新客户端）                                   "
+echo "   https://github.com/2dust/v2rayN/releases"
+echo "   https://github.com/2dust/v2rayNG/releases"
 echo
 echo "----------------------------------------------------------------------------------------------------------------------------------------------"
 echo
