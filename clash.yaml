@@ -72,7 +72,7 @@ proxy-groups:
       - 🚀 节点选择
       - 🎯 全球直连
       - tcp+xtls
-  - name: Ⓜ️ 哔哩哔哩
+  - name: Ⓜ️ 微软服务
     type: select
     proxies:
       - 🎯 全球直连
@@ -112,6 +112,7 @@ rule-providers:
 rules:
   - GEOIP,private,DIRECT,no-resolve
   - GEOSITE,apple,🍎 苹果服务
+  - GEOSITE,microsoft,Ⓜ️ 微软服务
   - GEOSITE,telegram,📲 电报信息
   - GEOSITE,netflix,🌍 国外媒体
   - GEOSITE,bilibili,🍃 哔哩哔哩
