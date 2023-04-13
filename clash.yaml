@@ -43,9 +43,6 @@ dns:
     "geosite:cn,private":
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
-    "rule-set:cn,dns":
-    - https://doh.pub/dns-query
-    - https://dns.alidns.com/dns-query
 
 proxies:
 
