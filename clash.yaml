@@ -111,12 +111,12 @@ rule-providers:
     url: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/cn_domain.yaml"
 rules:
   - GEOIP,private,DIRECT,no-resolve
-  - GEOSITE,apple,🍎 苹果服务,no-resolve
-  - GEOSITE,telegram,📲 电报信息,no-resolve
-  - GEOSITE,netflix,🌍 国外媒体,no-resolve
-  - GEOSITE,bilibili,🍃 哔哩哔哩,no-resolve
-  - GEOSITE,spotify,🌍 国外媒体,no-resolve
-  - GEOSITE,geolocation-!cn,🚀 节点选择,no-resolve
+  - GEOSITE,apple,🍎 苹果服务
+  - GEOSITE,telegram,📲 电报信息
+  - GEOSITE,netflix,🌍 国外媒体
+  - GEOSITE,bilibili,🍃 哔哩哔哩
+  - GEOSITE,spotify,🌍 国外媒体
+  - GEOSITE,geolocation-!cn,🚀 节点选择
   - RULE-SET,cn,🎯 全球直连
   - GEOSITE,CN,🎯 全球直连
   - GEOIP,CN,🎯 全球直连
