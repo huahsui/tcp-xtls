@@ -35,7 +35,7 @@ dns:
   default-nameserver:
   - 223.5.5.5
   nameserver:
-  - 'tls://8.8.4.4#♻️ 自动选择'
+  - 'tls://dns.google#♻️ 自动选择'
   - 'tls://1.0.0.1#♻️ 自动选择'
   proxy-server-nameserver:
   - https://doh.pub/dns-query
@@ -81,8 +81,8 @@ proxy-groups:
   - name: 🍎 苹果服务
     type: select
     proxies:
-      - 🚀 节点选择
       - 🎯 全球直连
+      - 🚀 节点选择
       - tcp+xtls
   - name: 🎯 全球直连
     type: select
