@@ -371,7 +371,7 @@ cat > /root/singbox.json <<EOF
   }
 }
 EOF
-wget -N --no-check-certificate -q -O /root/meta.yaml "https://raw.githubusercontent.com/huahsui/tcp-xtls/gh-pages/clash.yaml" && sed -i '51 i\  - {name: tcp+xtls, server: $Zero, port: 443, type: vless, uuid: $UUID, network: tcp, tls: true, udp: true, flow: xtls-rprx-vision, servername: learn.microsoft.com, reality-opts: {public-key: $Two, short-id: 12345678}, client-fingerprint: chrome}' /root/meta.yaml
+wget -N --no-check-certificate -q -O /root/meta.yaml "https://raw.githubusercontent.com/huahsui/tcp-xtls/gh-pages/clash.yaml" && sed -i '51 i\  - {name: tcp+xtls, server: '$Zero', port: 443, type: vless, uuid: '$UUID', network: tcp, tls: true, udp: true, flow: xtls-rprx-vision, servername: learn.microsoft.com, reality-opts: {public-key: '$Two', short-id: 12345678}, client-fingerprint: chrome}' /root/meta.yaml
 
 echo "----------------------------------------------------------------------------------------------------------------------------------------------"
 echo
