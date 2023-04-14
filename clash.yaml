@@ -117,6 +117,11 @@ rules:
   - GEOSITE,netflix,🌍 国外媒体
   - GEOSITE,bilibili,🍃 哔哩哔哩
   - GEOSITE,spotify,🌍 国外媒体
+  - GEOSITE,ehentai,🚀 节点选择
+  - GEOSITE,github,🚀 节点选择
+  - GEOSITE,twitter,🚀 节点选择
+  - GEOSITE,youtube,🌍 国外媒体
+  - GEOSITE,google,🚀 节点选择
   - GEOSITE,geolocation-!cn,🚀 节点选择
   - RULE-SET,cn,🎯 全球直连
   - GEOSITE,CN,🎯 全球直连
