@@ -125,6 +125,7 @@ rules:
   - GEOSITE,twitter,🚀 节点选择
   - GEOSITE,youtube,🌍 国外媒体
   - GEOSITE,google,🚀 节点选择
+  - GEOSITE,gfw,🚀 节点选择
   - GEOSITE,geolocation-!cn,🚀 节点选择
   - RULE-SET,cn,🎯 全球直连
   - GEOSITE,CN,🎯 全球直连
