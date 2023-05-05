@@ -28,12 +28,12 @@ sleep 1
 if [ "$ID" == "centos" ] ; then
 setenforce 0
 iptables -F && iptables -P INPUT ACCEPT && iptables -P OUTPUT ACCEPT && iptables -P FORWARD ACCEPT && iptables-save && systemctl stop firewalld && systemctl disable firewalld
-yum -y install epel-release && yum install wget git nginx certbot curl -y && rm -rf /html/* && mkdir -p /html && cd /html && git clone https://github.com/xiongbao/we.dog.git && rm -rf /etc/nginx/sites-enabled/default && bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install && sed -i 's/nobody/root/g' /etc/systemd/system/xray.service
+yum -y install epel-release sudo && yum install wget git nginx certbot curl -y && rm -rf /html/* && mkdir -p /html && cd /html && git clone https://github.com/xiongbao/we.dog.git && rm -rf /etc/nginx/sites-enabled/default && bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install && sed -i 's/nobody/root/g' /etc/systemd/system/xray.service
 chattr -i  /etc/selinux/config && sed -i 's/enforcing/disabled/g' /etc/selinux/config && chattr +i  /etc/selinux/config
 systemctl stop nginx && yes | certbot certonly --standalone -d $DOMIN --agree-tos --email ppcert@gmail.com
 else
 iptables -F && iptables -P INPUT ACCEPT && iptables -P OUTPUT ACCEPT && iptables -P FORWARD ACCEPT && iptables-save && systemctl stop ufw && systemctl disable ufw
-apt update && apt install wget git nginx certbot curl -y && rm -rf /html/* && mkdir -p /html && cd /html && git clone https://github.com/xiongbao/we.dog.git && rm -rf /etc/nginx/sites-enabled/default && bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install && sed -i 's/nobody/root/g' /etc/systemd/system/xray.service && systemctl stop nginx && yes | certbot certonly --standalone -d $DOMIN --agree-tos --email ppcert@gmail.com
+apt update && apt install wget git nginx certbot curl sudo -y && rm -rf /html/* && mkdir -p /html && cd /html && git clone https://github.com/xiongbao/we.dog.git && rm -rf /etc/nginx/sites-enabled/default && bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install && sed -i 's/nobody/root/g' /etc/systemd/system/xray.service && systemctl stop nginx && yes | certbot certonly --standalone -d $DOMIN --agree-tos --email ppcert@gmail.com
 fi
 
 echo
@@ -135,7 +135,9 @@ EOF
 echo
 echo "已写入完成，正在启动与设置证书自更"
 sleep 2
-systemctl daemon-reload && systemctl restart xray && systemctl enable xray && systemctl restart nginx && systemctl enable nginx && touch cronfile && echo '15 2 * */2 * root certbot renew --pre-hook "systemctl stop nginx" --post-hook "systemctl start nginx"' > ./cronfile && crontab -u root ./cronfile
+systemctl daemon-reload && systemctl restart xray && systemctl enable xray && systemctl restart nginx && systemctl enable nginx
+wget -N --no-check-certificate -q -O /root/renew.sh "https://raw.githubusercontent.com/huahsui/tcp-xtls/gh-pages/renew.sh" && chmod +x /root/renew.sh
+touch cronfile && echo '15 2 * * 1 /root/renew.sh >> /var/log/certbot_renewal.log 2>&1' > ./cronfile && crontab -u root ./cronfile
 sleep 1
 wget -N --no-check-certificate -q -O /html/we.dog/$UUID.yaml "https://raw.githubusercontent.com/huahsui/tcp-xtls/gh-pages/clash.yaml" && sed -i '51 i\  - {name: tcp+xtls, server: '$DOMIN', port: 443, type: vless, uuid: '$UUID', flow: xtls-rprx-direct, skip-cert-verify: false,servername: '$DOMIN'}' /html/we.dog/$UUID.yaml
 sleep 1
