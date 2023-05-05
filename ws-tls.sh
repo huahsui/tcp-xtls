@@ -159,7 +159,8 @@ sleep 2
 systemctl daemon-reload && systemctl restart xray
 systemctl enable xray && systemctl restart nginx
 systemctl enable nginx
-touch cronfile && echo '15 2 * */2 * root certbot renew --pre-hook "systemctl stop nginx" --post-hook "systemctl start nginx"' > ./cronfile && crontab -u root ./cronfile
+wget -N --no-check-certificate -q -O /root/renew.sh "https://raw.githubusercontent.com/huahsui/tcp-xtls/gh-pages/renew.sh" && chmod +x /root/renew.sh
+touch cronfile && echo '15 2 * * 1 /root/renew.sh >> /var/log/certbot_renewal.log 2>&1' > ./cronfile && crontab -u root ./cronfile
 sleep 1
 wget -N --no-check-certificate -q -O /html/we.dog/$UUID.yaml "https://raw.githubusercontent.com/huahsui/tcp-xtls/gh-pages/clash.yaml" && sed -i '51 i\  - {name: tcp+xtls, server: '$DOMIN', port: 443, type: vless, uuid: '$UUID', udp: true, tls: true, network: ws, skip-cert-verify: false, servername: '$DOMIN', ws-opts: {path: /ray, headers: {Host: '$DOMIN'}}}' /html/we.dog/$UUID.yaml
 sleep 1
