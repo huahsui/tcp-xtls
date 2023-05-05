@@ -27,7 +27,7 @@ dns:
   enable: true
   listen: 0.0.0.0:1053
   ipv6: true
-  enhanced-mode: fake-ip
+  enhanced-mode: redir-host
   fake-ip-range: 28.0.0.1/8
   fake-ip-filter:
   - '*'
@@ -43,7 +43,7 @@ dns:
     "geosite:cn,private":
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
-    "rule-set:cn,dns":
+    "rule-set:cn":
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
     
@@ -113,7 +113,7 @@ rule-providers:
     type: http
     url: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/cn_domain.yaml"
 rules:
-  - GEOIP,private,DIRECT,no-resolve
+  - GEOIP,private,DIRECT
   - GEOSITE,apple,🍎 苹果服务
   - GEOSITE,microsoft,Ⓜ️ 微软服务
   - GEOSITE,telegram,📲 电报信息
