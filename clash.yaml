@@ -114,16 +114,16 @@ rule-providers:
     url: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/cn_domain.yaml"
 rules:
   - GEOIP,private,DIRECT
+  - GEOSITE,github,🚀 节点选择
+  - GEOSITE,netflix,🌍 国外媒体
+  - GEOSITE,spotify,🌍 国外媒体
+  - GEOSITE,youtube,🌍 国外媒体
+  - GEOSITE,telegram,📲 电报信息
   - GEOSITE,apple,🍎 苹果服务
   - GEOSITE,microsoft,Ⓜ️ 微软服务
-  - GEOSITE,telegram,📲 电报信息
-  - GEOSITE,netflix,🌍 国外媒体
   - GEOSITE,bilibili,🍃 哔哩哔哩
-  - GEOSITE,spotify,🌍 国外媒体
   - GEOSITE,ehentai,🚀 节点选择
-  - GEOSITE,github,🚀 节点选择
   - GEOSITE,twitter,🚀 节点选择
-  - GEOSITE,youtube,🌍 国外媒体
   - GEOSITE,google,🚀 节点选择
   - GEOSITE,gfw,🚀 节点选择
   - GEOSITE,geolocation-!cn,🚀 节点选择
